@@ -133,9 +133,12 @@ public class ApiConfig {
         // Embedded Source : Update in Strings.xml if required
         String apiUrl = Hawk.get(HawkConfig.API_URL, HomeActivity.getRes().getString(R.string.app_source));
         if (apiUrl.isEmpty()) {
-            callback.error("源地址为空");
-            return;
+            appSource = "http://www.饭太硬.top/tv/"   //自定义json
+           // callback.error("源地址为空");
+          //  return;
         }
+        String apiUrl = Hawk.get(HawkConfig.API_URL, appSource);
+        
         File cache = new File(App.getInstance().getFilesDir().getAbsolutePath() + "/" + MD5.encode(apiUrl));
         if (useCache && cache.exists()) {
             try {
@@ -167,9 +170,9 @@ public class ApiConfig {
         System.out.println("API URL :" + configUrl);
         String configKey = TempKey;
         OkGo.<String>get(configUrl)
-                .headers("User-Agent", userAgent)
-                .headers("Accept", requestAccept)
-                .execute(new AbsCallback<String>() {
+                。headers("User-Agent", userAgent)
+                。headers("Accept", requestAccept)
+                。execute(new AbsCallback<String>() {
                     @Override
                     public void onSuccess(Response<String> response) {
                         try {
