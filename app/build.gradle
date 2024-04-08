@@ -3,18 +3,18 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 def static buildTime() {
-    return new Date().format("yyyyMMdd.HHmm", TimeZone.getTimeZone("GMT+08:00"))
+    return new Date().format("yyyyMMdd_HHmm", TimeZone.getTimeZone("GMT+08:00"))
 }
 
 android {
     compileSdk 33
 
     defaultConfig {
-        applicationId 'com.github.tvbox.osc.tk.frank'
-        minSdkVersion 19
+        applicationId 'com.github.tvbox.osc.tk'
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "3.".concat(buildTime())
+        versionName "1.0.".concat(buildTime())
         multiDexEnabled true
         //设置room的Schema的位置
         javaCompileOptions {
@@ -51,7 +51,7 @@ android {
     buildFeatures {
         dataBinding = true
     }
-	
+
     lint {
         disable 'UnsafeOptInUsageError'
     }
@@ -102,21 +102,23 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.3.1'
     implementation 'com.orhanobut:hawk:2.0.1'
     implementation 'net.sourceforge.streamsupport:android-retrofuture:1.7.4'
-    implementation 'androidx.annotation:annotation:1.6.0'
+//    implementation 'androidx.annotation:annotation:1.6.0'
     implementation "androidx.media3:media3-exoplayer:1.1.1"
     implementation "androidx.media3:media3-ui:1.1.1"
+    implementation "androidx.media3:media3-datasource:1.1.1"
     implementation "androidx.media3:media3-exoplayer-dash:1.1.1"
     implementation "androidx.media3:media3-exoplayer-hls:1.1.1"
     implementation "androidx.media3:media3-exoplayer-rtsp:1.1.1"
     implementation "androidx.media3:media3-datasource-rtmp:1.1.1"
     implementation 'androidx.media3:media3-common:1.1.1'
+    implementation "com.github.anilbeesetti.nextlib:nextlib-media3ext:0.5.0" // To add media3 software decoders and extensions
+    //implementation "com.github.anilbeesetti.nextlib:nextlib-mediainfo:0.5.0" // To get media info through ffmpeg
+
 
     implementation "com.aliyun.sdk.android:AliyunPlayer:5.5.2.0-full"
     implementation 'com.alivc.conan:AlivcConan:0.9.5'
     implementation 'xyz.doikki.android.dkplayer:dkplayer-ui:3.3.7'
     implementation 'xyz.doikki.android.dkplayer:videocache:3.3.7'
-    implementation 'com.github.xuexiangjys:XUpdate:2.1.2'                  //在线升级
-    implementation 'com.github.xuexiangjys.XUpdateAPI:xupdate-easy:1.0.1'  //在线升级	
 
     implementation('org.xwalk:xwalk_shared_library:23.53.589.4') {
         exclude group: 'com.android.support'
