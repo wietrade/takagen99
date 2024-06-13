@@ -6,8 +6,8 @@
 
     // About
 	<string name="version_title">版本 </string>
-	<string name="mn_Version">20240604-2211</string>
-	<string name="dia_about">版本：20240604-2211\n更新日志：\n还原回原来的EXO解码，去除第三方anilbeesetti库的nextlib-media3ext解码 (#142) \n回滚（增加exo解码能力，解决部分视频exo,ijk解码都是有声音没图像的问题，引入的第三方库要求最低5.0）\n回滚（增加exo解码能力，解决部分视频exo,ijk解码都是有声音没图像的问题，引入的第三方库要求最低5.0）\n支持在配置内设定直播播放请求头 (#141)\n\n本软件只提供聚合展示功能，所有资源来自网上, 软件不参与任何制作, 上传, 储存, 下载等内容. 软件仅供学习参考, 请于安装后24小时内删除。\n\n打包分发请保留出处\nhttps://github.com/CatVodTVOfficial/TVBoxOSC</string>
+	<string name="mn_Version">20240612-1920</string>
+	<string name="dia_about">版本：20240612-1920\n更新日志：\n修改片尾显示和跳过逻辑 (#143) \nallow url containing commas (#144)\n\n本软件只提供聚合展示功能，所有资源来自网上, 软件不参与任何制作, 上传, 储存, 下载等内容. 软件仅供学习参考, 请于安装后24小时内删除。\n\n打包分发请保留出处\nhttps://github.com/CatVodTVOfficial/TVBoxOSC</string>
 
     // Home Page //
     <string name="hm_ok">加载成功</string>
